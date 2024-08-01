@@ -9,8 +9,12 @@ import java.util.List;
 public interface UserService {
 
     User registerUSer(User user) throws JsonProcessingException;
-    public User updateUser(User user,int id);
+
+    public User updateUser(User user, int id);
+
     User getUserById(int id);
 
     List<User> getAllUsers();
+
+    User findUserByEmail(String email);
 }

@@ -36,4 +36,9 @@ public class UserController implements IUserController {
         return new ResponseEntity<>(userService.getAllUsers(),HttpStatus.OK);
     }
 
+    @GetMapping("/findByemail/{email}")
+    public ResponseEntity<User> findUserByEmail(@PathVariable String email) {
+        return new ResponseEntity<>(userService.findUserByEmail(email),HttpStatus.OK);
+    }
+
 }

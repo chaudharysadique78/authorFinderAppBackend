@@ -39,4 +39,11 @@ public interface IUserController {
     @Schema(implementation = User.class)
     ResponseEntity<List<User>> getAllUsers();
 
+    @Operation(summary = "Get user by Email", description = "Get user by Email")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Successful operation"),
+            @ApiResponse(responseCode = "404", description = "User not found")
+    })
+    ResponseEntity<User> findUserByEmail(String email);
+
 }
